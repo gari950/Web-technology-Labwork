@@ -1,0 +1,116 @@
+<html>
+<body>
+<h1>Registration form</h1>
+<form>
+<div class="col-md-12">
+    <label for="inputName" class="form-label">Name*</label>
+    <input type="text" class="form-control" id="inputName">
+  </div>
+  <br>
+  <div>
+Male:
+<input type="radio" name="Sex" value="Male"
+checked="checked">
+Female:
+<input type="radio" name="Sex" value="Female">
+<br>
+  </div>
+  <br>
+  <div class="col-md-6">
+    <label for="inputFname" class="form-label">Father name*</label>
+    <input type="text" class="form-control" id="inputFname">
+  </div>
+  <br>
+  <div class="col-md-6">
+    <label for="inputMname" class="form-label">Mother name*</label>
+    <input type="text" class="form-control" id="inputMname">
+  </div>
+<br>
+  <div class="col-md-6">
+    <label for="inputDob" class="form-lable">DOB*</label>
+    <input type="date" class="form-control" id="DOB" name="DOB">
+  </div>
+  <br>
+  <div class="col-md-12">
+    <label for="inputnumber" class="form-label">Telephone*</label>
+    <input type="phone"  class="form-control" id="inputnumber">
+  </div>
+<br>
+  <div class="col-12">
+    <label for="inputAddress" class="form-label">Address 1*</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+  </div>
+  <br>
+  <div class="col-12">
+    <label for="inputAddress2" class="form-label">Address 2</label>
+    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+  </div>
+<br>
+<div>
+    <button onclick="getlocation();"> Show Position</button> 
+    <div id="demo" style="width: 600px; height: 400px; margin-left: 200px;"></div> 
+   
+    <script src="https://maps.google.com/maps/api/js?sensor=false"> </script> 
+    
+    <script type="text/javascript"> 
+    function getlocation(){ 
+        if(navigator.geolocation){ 
+            navigator.geolocation.getCurrentPosition(showPos, showErr); 
+        }
+        else{
+            alert("Sorry! your Browser does not support Geolocation API")
+        }
+    } 
+    //Showing Current Poistion on Google Map
+    function showPos(position){ 
+        latt = position.coords.latitude; 
+        long = position.coords.longitude; 
+        var lattlong = new google.maps.LatLng(latt, long); 
+        var myOptions = { 
+            center: lattlong, 
+            zoom: 15, 
+            mapTypeControl: true, 
+            navigationControlOptions: {style:google.maps.NavigationControlStyle.SMALL} 
+        } 
+        var maps = new google.maps.Map(document.getElementById("demo"), myOptions); 
+        var markers = 
+        new google.maps.Marker({position:lattlong, map:maps, title:"You are here!"}); 
+    } 
+
+    //Handling Error and Rejection
+         function showErr(error) {
+          switch(error.code){
+          case error.PERMISSION_DENIED:
+         alert("User denied the request for Geolocation API.");
+          break;
+         case error.POSITION_UNAVAILABLE:
+         alert("USer location information is unavailable.");
+        break;
+        case error.TIMEOUT:
+        alert("The request to get user location timed out.");
+        break;
+       case error.UNKNOWN_ERROR:
+        alert("An unknown error occurred.");
+        break;
+       }
+    }        
+    </script> 
+</div>
+<br>
+  <div class="form-group col-md-6">
+    <label for="inputCountry">Country*</label>
+    <select id="inputCountry" class="form-control">
+      <option selected>India</option>
+      <option selected>Nepal</option>
+      <option selected>Bangladesh</option>
+      <option selected>Select</option>
+    </select>
+  </div>
+  <br>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+  </form>
+
+</body
+</html>
