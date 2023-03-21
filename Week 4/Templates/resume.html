@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="../static/css/style1.css">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+    <a href="../home.html" class="back">Back</a>
+    <h2>Registration &nbsp Form</h2>
+
+    <div class="form">
+        <form action="">
+            <div  class="input_field">
+                <label for="myName">Name:</label>
+                <input type="text" name="myName" class="input" placeholder="Enter name">
+            </div>
+            <div class="input_field">
+                <label for="myPassword">Password:</label>
+                <input type="password" name="myPassword"  class="input" placeholder="Enter password">
+            </div>
+            <div class="input_field">
+                <label for="myEmail">Email Id:</label>
+                <input type="email" name="myEmail"  class="input" placeholder="Enter Email Id">
+            </div>
+            <div class="input_field">
+                <label for="myNumber">Phone Number:</label>
+                <input type="text" name="myNumber"  class="input" placeholder="Enter Phone Number">
+            </div>
+            <div class="input_field">
+                <label for="myGender">Gender: </label>
+                <div class="custom">
+                    <select name="myGender"  class="input">
+                        <option value="">Select</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Others">Others</option>
+                    </select>
+
+                </div>
+            </div>
+            <div class="input_field" >
+                <label for="myDate">Date of Birth:</label>
+                <div class="custom">
+                    <input type="date" name="myDate"  class="input">
+                </div>
+            </div>
+            <div class="input_field">
+                <label for="lan">Languages: </label>           
+                <div class="input" id="lan">
+                    <label for="lan">English
+                        <input type="checkbox" name="lan"  value="English">
+                    </label>
+                    <br>
+                    <label for="lan">Hindi
+                        <input type="checkbox" name="lan" value="Hindi">
+                    </label>
+                    <br>
+                    <label for="lan">Telegu
+                        <input type="checkbox" name="lan" value="Telegu">
+                    </label>
+                   
+                    <br>
+                    <label for="lan">Tamil
+                        <input type="checkbox" name="lan" value="Tamil">
+                    </label>
+                </div>
+            </div>
+            <div class="input_field">
+                <label for="myAddress">Address:</label>
+                <br><textarea name="myAddress"  class="input" cols="40" rows="6" placeholder="Enter Address"></textarea>
+            </div>
+            <br>
+            <div >
+                <input type="submit" value="Submit " class="btn" >
+            </div>
+        </form>
+    </div>
+    </div>
+</body>
+</html>
+
+
+
+<!-- Male: <input type="radio" name="myGender" id="Gender"> Female: <input type="radio" name="myGender" id="Gender"> Others: <input type="radio" name="myGender" id="Gender"> -->
