@@ -1,0 +1,113 @@
+*{
+    /* margin: 2px;
+    padding: 2px; */
+    box-sizing: border-box;
+    font-family: 'EB Garamond', serif;
+    
+}
+
+body{
+    background-color:  rgb(192, 128, 252);
+    padding: 0px 20px;
+    
+}
+
+
+.container{
+    max-width: 600px;
+    width: 100%;
+    height: 700px;
+    background-color: white;
+    padding: 5px 30px;
+    margin: 20px auto;
+    border-radius: 50px;
+    position: relative; 
+    box-shadow: 15px 15px 10px blueviolet;  
+}
+
+.back {
+    top: 20px;
+    right: 32px;
+    position: absolute;
+    padding: 2px 14px;
+    border-radius: 10px;
+    background-color: blueviolet;
+    color: white;
+    text-decoration: none;
+    border: 1px solid white;
+    box-shadow: 7px 6px 5px blueviolet;
+}
+
+.back:hover {
+    border: 1px solid blueviolet;
+    background-color: white;
+    color: blueviolet;
+    font-size: 17px;
+}
+
+h2{
+    font-size: 45px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
+    color:  blueviolet;
+    font-variant: small-caps;
+    text-shadow: 20px 10px 4px #d4b0f6;
+}
+
+.form{
+    width: 100%;
+}
+
+.input_field{
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    font-variant: small-caps;
+    font-weight: bold;
+}
+
+label{
+    width: 200px;
+}
+
+.input{
+    width: 100%;
+    border: 1px solid #d5dbd9;
+    color: rgb(51, 50, 50);
+    outline: grey;
+    background-color: rgb(231, 231, 231);
+
+}
+.custom{
+    margin-left: -55px;
+}
+.input#lan{
+    border: hidden;
+    font-size: 14px;
+    font-weight: lighter;
+    background-color: white;
+}
+
+
+.btn{
+    background-color: blueviolet;
+    border-radius: 10px;
+    color: white;
+    border: 1px solid blueviolet;
+    padding: 4px 12px; 
+    float: right;
+    margin-right: 10px;
+    border: 1px solid white;
+    box-shadow: 7px 6px 5px blueviolet;
+
+
+}
+
+.btn:hover{
+    background-color: white;
+    border: 1px solid blueviolet;
+    padding: 4px 10px;
+    cursor: pointer;
+    color: blueviolet;
+}
