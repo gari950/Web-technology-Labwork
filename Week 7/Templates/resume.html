@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="../static/css/style1.css">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+</head>
+<body>
+<script>
+    function numberWithCommas(x) {
+      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+  </script>
+<script>
+    function numberWithCommas(x) {
+      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    function validateForm() {
+      const name = document.forms["registration-form"]["name"].value;
+      const age = document.forms["registration-form"]["age"].value;
+      const income = document.forms["registration-form"]["income"].value;
+      const nameRegex = /^[A-Z][a-z]*$/;
+
+      if (!nameRegex.test(name)) {
+        alert("Name must start with a capital letter and only contain letters");
+        return false;
+      }
+      if (age < 18) {
+        alert("You must be at least 18 years old to register");
+        return false;
+      }
+      if (income < 0 || isNaN(income)) {
+        alert("Income must be a positive number");
+        return false;
+      }
+
+      const formattedIncome = numberWithCommas(income);
+      alert(`Name: ${name}\nAge: ${age}\nIncome: $${formattedIncome}`);
+      return true;
+    }
+  </script>
+    <div class="container">
+    <a href="../home.html" class="back">Back</a>
+    <h2>Registration &nbsp For m</h2>
+
+    <div class="form">
+        <form action="">
+<form name="registration-form" onsubmit="return validateForm()">
+            <div  class="input_field">
+                <label for="name">Name:</label>
+                <input type="text" id= "name" name="name" class="input" required onblur= "testName()" placeholder="Enter name">
+
+		 <span id="errorMessage" style="color: red;"></span>
+            </div>
+
+            <div class="input_field">
+                <label for="myPassword">Password:</label>
+                <input type="password" name="myPassword"  class="input" placeholder="Enter password">
+            </div>
+            <div class="input_field">
+                <label for="myEmail">Email Id:</label>
+                <input type="email" name="myEmail"  class="input" placeholder="Enter Email Id">
+            </div>
+            <div class="input_field">
+                <label for="myNumber">Phone Number:</label>
+                <input type="text" name="myNumber" id="number-input"  class="input" required onblur="printNumber()" placeholder="Enter Phone Number">
+
+    <label for="income">Income:</label>
+    <input type="number" id="income" name="income"><br><br>
+<p id="output"></p>
+ 
+            </div>
+
+            <div class="input_field">
+
+                <label for="myGender">Gender: </label>
+                <div class="custom">
+                    <select name="myGender"  class="input">
+                        <option value="">Select</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Others">Others</option>
+                    </select>
+
+                </div>
+
+
+
+            </div>
+
+            <div class="input_field" >
+                <label for="myDate">Date of Birth:</label>
+                <div class="custom">
+                    <input type="date" name="myDate"  class="input">
+			<label for="age">Age:</label>
+    <input type="number" id="age" class="input" name="age" placeholder="Enter age">
+                </div>
+            </div>
+            <div class="input_field">
+                <label for="lan">Languages: </label>           
+                <div class="input" id="lan">
+                    <label for="lan">English
+                        <input type="checkbox" name="lan"  value="English">
+                    </label>
+                    <br>
+                    <label for="lan">Hindi
+                        <input type="checkbox" name="lan" value="Hindi">
+                    </label>
+                    <br>
+                    <label for="lan">Telegu
+                        <input type="checkbox" name="lan" value="Telegu">
+                    </label>
+                   
+                    <br>
+                    <label for="lan">Tamil
+                        <input type="checkbox" name="lan" value="Tamil">
+                    </label>
+                </div>
+            </div>
+            <div class="input_field">
+                <label for="myAddress">Address:</label>
+                <br><textarea name="myAddress"  class="input" cols="40" rows="6" placeholder="Enter Address"></textarea>
+            </div>
+            <br>
+            <div >
+                <input type="submit" value="Submit " class="btn" >
+		   <a href="C:\Users\garima saha\OneDrive\Desktop\semester 6\CSP352\Templates\upload.html"> <input type="button" value="Upload resume " class="btn" >	</a>
+            </div>
+        </form>
+<script>
+		function testName() {
+			let nameInput = document.getElementById("name").value;
+			let errorMessageElement = document.getElementById("errorMessage");
+			if (nameInput.charAt(0) === nameInput.charAt(0).toUpperCase()) {
+				errorMessageElement.innerHTML = "";
+			} else {
+				errorMessageElement.innerHTML = "first character must be uppercase.";
+			}
+		}
+	</script>
+    </div>
+    </div>
+
+</body>
+</html>
+
+
+
+<!-- Male: <input type="radio" name="myGender" id="Gender"> Female: <input type="radio" name="myGender" id="Gender"> Others: <input type="radio" name="myGender" id="Gender"> -->

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="../static/css/style1.css">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+  <script>
+    function numberWithCommas(x) {
+      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    function validateForm() {
+      const name = document.forms["registration-form"]["name"].value;
+      const age = document.forms["registration-form"]["age"].value;
+      const income = document.forms["registration-form"]["income"].value;
+      const nameRegex = /^[A-Z][a-z]*$/;
+
+      if (!nameRegex.test(name)) {
+        alert("Name must start with a capital letter and only contain letters");
+        return false;
+      }
+      if (age < 18) {
+        alert("You must be at least 18 years old to register");
+        return false;
+      }
+      if (income < 0 || isNaN(income)) {
+        alert("Income must be a positive number");
+        return false;
+      }
+
+      const formattedIncome = numberWithCommas(income);
+      alert(`Name: ${name}\nAge: ${age}\nIncome: $${formattedIncome}`);
+      return true;
+    }
+  </script>
+</head>
+<body>
+  <h1>Registration Form</h1>
+  <form name="registration-form" onsubmit="return validateForm()">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"><br><br>
+
+    <label for="age">Age:</label>
+    <input type="number"  id="age" name="age"><br><br>
+
+    <label for="income">Income:</label>
+    <input type="number" id="income" name="income"><br><br>
+
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>
